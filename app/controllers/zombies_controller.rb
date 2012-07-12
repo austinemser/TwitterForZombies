@@ -2,8 +2,10 @@ class ZombiesController < ApplicationController
   # GET /zombies
   # GET /zombies.json
   def index
+    
     @zombies = Zombie.all
-
+    @rotting_zombies = Zombie.rotting
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @zombies }
